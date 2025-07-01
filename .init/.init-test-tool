@@ -1,0 +1,4 @@
+{
+    "command": "npm run test",
+    "working_directory": "/home/kavia/workspace/code-generation/storetrack-inventory-system-95286-c1e64421/inventory_frontend"
+}
