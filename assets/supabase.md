@@ -8,15 +8,17 @@
 
 ## Integration Status
 
-- Successfully connected to the Supabase project using the provided credentials.
-- As of this setup, attempts to retrieve table metadata and schema details via both REST and direct SQL/admin RPCs failed due to the following error from Supabase:
+- Successfully connected to the Supabase project using the provided credentials (SUPABASE_DB_URL, SUPABASE_KEY, SUPABASE_URL, last validated 2024-06).
+- As of this setup, attempts to retrieve table metadata and schema details via both REST and direct SQL/admin RPCs fail due to the following error from Supabase:
 
   ```
   Could not find the function public.run_sql(query) in the schema cache
   ```
 
-  This usually indicates missing administrative or metadata functions (`run_sql`) in the Supabase instance, which restricts in-depth programmatic schema extraction.
-
+  This indicates the administrative or metadata function (`run_sql`) is not available in this Supabase instance, restricting in-depth programmatic schema extraction. However, all direct CRUD operations on known tables and standard queries work as expected.
+  - Environment variables currently match the Supabase dashboard and do not require any update.
+  - User/client integration is up to date and functional.
+  - For advanced database programming or admin operations, the Supabase instance requires enabling the necessary PostgreSQL functions (such as public.run_sql).
 ## Recommendations
 
 - Confirm that the necessary administrative functions or database extensions are enabled on your Supabase project if advanced schema access is required programmatically.
